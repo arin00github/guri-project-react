@@ -1,12 +1,12 @@
 import { CommonResponse } from "./common.interface";
 
 export interface ModeState {
-  auto_ctrl_yn: boolean;
+    auto_ctrl_yn: boolean;
 }
 
 export interface CctvInfoType {
-  name: string;
-  cctv_id: string;
+    name: string;
+    cctv_id: string;
 }
 
 /**
@@ -33,20 +33,20 @@ export type ControlDeviceType = Record<string, string | number>;
  * @property {Record<string, string | number>[] | undefined} dvcHTBC 온열밴치 상세정보 배열
  */
 export interface SecurityGuardDetail {
-  uid: string;
-  area: string;
-  name: string;
-  asset_type: string;
-  node_id: string;
-  auto_ctrl_yn: boolean;
-  cctv_info: CctvInfoType[];
-  dvcARCO?: ControlDeviceType;
-  dvcARSS?: ControlDeviceType;
-  dvcCHGR?: ControlDeviceType;
-  dvcLDLT?: ControlDeviceType;
-  dvcATDR?: ControlDeviceType;
-  dvcSPGN?: ControlDeviceType;
-  dvcHTBC?: ControlDeviceType;
+    uid: string;
+    area: string;
+    name: string;
+    asset_type: string;
+    node_id: string;
+    auto_ctrl_yn: boolean;
+    cctv_info: CctvInfoType[];
+    dvcARCO?: ControlDeviceType;
+    dvcARSS?: ControlDeviceType;
+    dvcCHGR?: ControlDeviceType;
+    dvcLDLT?: ControlDeviceType;
+    dvcATDR?: ControlDeviceType;
+    dvcSPGN?: ControlDeviceType;
+    dvcHTBC?: ControlDeviceType;
 }
 
 /**
@@ -63,25 +63,35 @@ export interface SecurityGuardDetail {
  * @property {Record<string, string | number>[] | undefined} dvcLDLT LED조명 상세정보 배열
  */
 export interface SafeTreeDetail {
-  uid: string;
-  area: string;
-  name: string;
-  asset_type: string;
-  node_id: string;
-  auto_ctrl_yn: boolean;
-  cctv_info: CctvInfoType[];
-  dvcFDLD?: ControlDeviceType;
-  dvcARCO?: ControlDeviceType;
-  dvcARSS?: ControlDeviceType;
-  dvcLDLT?: ControlDeviceType;
+    uid: string;
+    area: string;
+    name: string;
+    asset_type: string;
+    node_id: string;
+    auto_ctrl_yn: boolean;
+    cctv_info: CctvInfoType[];
+    dvcFDLD?: ControlDeviceType;
+    dvcARCO?: ControlDeviceType;
+    dvcARSS?: ControlDeviceType;
+    dvcLDLT?: ControlDeviceType;
+}
+
+/** 방범초소 장비 상세정보 params */
+export interface SecurityGuardDetailParams {
+    uid: string;
 }
 
 /** 방범초소 장비 상세정보 response */
 export interface SecurityGuardDetailResponse extends CommonResponse {
-  response: SecurityGuardDetail;
+    response: SecurityGuardDetail;
+}
+
+/** 안심트리 장비 상세정보 params */
+export interface SafeTreeDetailParams {
+    uid: string;
 }
 
 /** 안심트리 장비 상세정보 response */
 export interface SafeTreeDetailResponse extends CommonResponse {
-  response: SafeTreeDetail;
+    response: SafeTreeDetail;
 }
