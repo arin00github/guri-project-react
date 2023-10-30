@@ -8,15 +8,15 @@ import { Select } from "./Select";
 import { Switch } from "./Switch";
 
 const components = {
-    Button,
-    Input,
-    Select,
-    InputGroup,
-    Container,
-    Popover,
-    CheckBox,
-    Switch,
-    Modal,
+  Button,
+  Input,
+  Select,
+  InputGroup,
+  Container,
+  Popover,
+  CheckBox,
+  Switch,
+  Modal,
 };
 
 export { components };

@@ -2,9 +2,9 @@ import SafeTreeControlPage from "../pages/safeTree/ControlPage";
 import SafeTreeMonitorPage from "../pages/safeTree/MonitorPage";
 import SecurityGuardControlPage from "../pages/securityGuard/ControlPage";
 import SecurityGaurdMonitorPage from "../pages/securityGuard/MonitorPage";
+import { CONTROL, MONITOR, SAFE_TREE, SECURITY_GUARD } from "../utils/constant";
 
 import Root from "./Root";
-import { CONTROL, MONITOR, SAFE_TREE, SECURITY_GUARD } from "./RouterMenu";
 
 import { Navigate, createBrowserRouter } from "react-router-dom";
 

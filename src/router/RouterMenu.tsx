@@ -1,7 +1,4 @@
-export const SAFE_TREE = "safe-tree";
-export const SECURITY_GUARD = "security-guard";
-export const CONTROL = "control";
-export const MONITOR = "monitor";
+import { CONTROL, MONITOR, SAFE_TREE, SECURITY_GUARD } from "../utils/constant";
 
 export type RouteType = {
   id: string;
