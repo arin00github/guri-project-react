@@ -11,14 +11,24 @@ import { RecoilRoot } from "recoil";
 
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <ChakraProvider theme={baseTheme}>
-          <RouterProvider router={router} />
-        </ChakraProvider>
-      </RecoilRoot>
-    </QueryClientProvider>
-  </React.StrictMode>,
-);
+async function deferRender() {
+    if (process.env.NODE_ENV !== "development") {
+        return;
+    }
+    const { worker } = await import("./mock/browser");
+    return worker.start();
+}
+
+deferRender().then(() => {
+    ReactDOM.createRoot(document.getElementById("root")!).render(
+        <React.StrictMode>
+            <QueryClientProvider client={queryClient}>
+                <RecoilRoot>
+                    <ChakraProvider theme={baseTheme}>
+                        <RouterProvider router={router} />
+                    </ChakraProvider>
+                </RecoilRoot>
+            </QueryClientProvider>
+        </React.StrictMode>,
+    );
+});
