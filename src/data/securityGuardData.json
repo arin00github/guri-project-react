@@ -1,0 +1,93 @@
+{
+    "code": 200,
+    "message": "OK",
+    "responseTime": "2023-07-13T08:44:27+09:00",
+    "response": {
+        "uid": "fe45ee0c-0b82-47fe-b759-e71acce371ee",
+        "area": "41310",
+        "name": "방범초소1",
+        "asset_type": "SECURE_ZONE",
+        "node_id": "SBS230001",
+        "auto_ctrl_yn": false,
+        "cctv_info": [
+            {
+                "name": "영상반출테스트",
+                "cctv_id": "100869_1_0_0"
+            },
+            {
+                "name": "SIS-D5231_61",
+                "cctv_id": "100869_3_0_0"
+            }
+        ],
+        "dvcARCO": [
+            {
+                "dvcId": "SBS230001-ARCO",
+                "oprt": 1,
+                "oprtMode": "1",
+                "coolTemp": 5,
+                "heatTemp": 3,
+                "autoTemp": 11,
+                "windSts": "2",
+                "indrTemp": -5.723975,
+                "coolStMd": "0601",
+                "coolEdMd": "0930",
+                "oprtStHm": "0800",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcARSS": [
+            {
+                "dvcId": "SBS230001-ARSS",
+                "temp": 21.433167,
+                "hmdt": 71.09072,
+                "fineDust": 31,
+                "ufineDust": 61,
+                "co2": 15,
+                "vocs": 18
+            }
+        ],
+        "dvcCHGR": [
+            {
+                "dvcId": "SBS230001-CHGR",
+                "pwr": 1,
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcLDLT": [
+            {
+                "dvcId": "SBS230001-LDLT",
+                "pwr": 1,
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcATDR": [
+            {
+                "dvcId": "SBS230001-ATDR",
+                "pwr": 1,
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcSPGN": [
+            {
+                "dvcId": "SBS230001-SPGN",
+                "watt": 1000,
+                "amp": 54,
+                "volt": 88,
+                "wattTdy": 100
+            }
+        ],
+        "dvcHTBC": [
+            {
+                "dvcId": "SBS230001-HTBC",
+                "pwr": 1,
+                "oprtStMd": "0101",
+                "oprtEdMd": "1231",
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ]
+    }
+}

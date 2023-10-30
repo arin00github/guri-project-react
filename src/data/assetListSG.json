@@ -1,0 +1,50 @@
+[
+{"geometry": {
+    "type": "Point",
+    "center": [968382.798844591, 1954236.01050289],
+    "coordinates": [968382.798844591, 1954236.01050289]},
+"properties": {
+    "asset_id": "SST230092",
+    "id": "layer_secure_zone.2ea0baaa-73eb-4dd7-be8d-3dbdbc5a999a",
+    "name": "방범초소2ea",
+    "show_label": "방범초소2ea",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967303.25768042, 1955057.2078422],
+    "coordinates": [967303.25768042, 1955057.2078422]},
+"properties": {
+    "asset_id": "SBS230002",
+    "id": "layer_secure_zone.a8586ff4-9e34-43e9-8a7d-f0c634838855",
+    "name": "방범초소a85",
+    "show_label": "방범초소a85",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [968612.094505858, 1956150.29942635],
+    "coordinates": [968612.094505858, 1956150.29942635]},
+"properties": {
+    "asset_id": "SST230091",
+    "id": "layer_secure_zone.b500f0e7-8512-47b7-adbd-6696cd4d9215",
+    "name": "방범초소b50",
+    "show_label": "방범초소b50",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967274.322604259, 1955107.24804337],
+    "coordinates": [967274.322604259, 1955107.24804337]},
+"properties": {
+    "asset_id": "SBS230001",
+    "id": "layer_secure_zone.fe45ee0c-0b82-47fe-b759-e71acce371ee",
+    "name": "방범초소fe4",
+    "show_label": "방범초소fe4",
+    "sublayer_id": "default"
+}
+}
+]

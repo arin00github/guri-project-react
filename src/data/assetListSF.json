@@ -1,0 +1,86 @@
+[
+{"geometry": {
+    "type": "Point",
+    "center": [968382.798844591, 1954236.01050289],
+    "coordinates": [968382.798844591, 1954236.01050289]},
+"properties": {
+    "asset_id": "SPL230097",
+    "id": "layer_ansim_tree.0ad8a38d-7511-4a36-8207-95be585274f0",
+    "name": "스마트트리0ad",
+    "show_label": "스마트트리0ad",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967303.25768042, 1955057.2078422],
+    "coordinates": [967303.25768042, 1955057.2078422]},
+"properties": {
+    "asset_id": "SPL230093",
+    "id": "layer_ansim_tree.16397dff-a30e-463b-94a1-72bfc323be67",
+    "name": "스마트트리163",
+    "show_label": "스마트트리163",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [968612.094505858, 1956150.29942635],
+    "coordinates": [968612.094505858, 1956150.29942635]},
+"properties": {
+    "asset_id": "SPL230099",
+    "id": "layer_ansim_tree.194bb170-b81c-46ff-bf34-57d12c203f97",
+    "name": "스마트트리194",
+    "show_label": "스마트트리194",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967274.322604259, 1955107.24804337],
+    "coordinates": [967274.322604259, 1955107.24804337]},
+"properties": {
+    "asset_id": "SPL230096",
+    "id": "layer_ansim_tree.42541cc5-536a-4015-a02e-7da40674f84e",
+    "name": "스마트트리425",
+    "show_label": "스마트트리425",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967274.322604259, 1955107.24804337],
+    "coordinates": [967274.322604259, 1955107.24804337]},
+"properties": {
+    "asset_id": "SPL230102",
+    "id": "layer_ansim_tree.51a041ba-a090-4ccf-8347-47ee0eea6974",
+    "name": "스마트트리51a",
+    "show_label": "스마트트리51a",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967797.405977897, 1952930.53749811],
+    "coordinates": [967797.405977897, 1952930.53749811]},
+"properties": {
+    "asset_id": "SPL230094",
+    "id": "layer_ansim_tree.55d07807-2b77-4197-aab1-da7af3546641",
+    "name": "스마트트리55d",
+    "show_label": "스마트트리55d",
+    "sublayer_id": "default"
+}
+},
+{"geometry": {
+    "type": "Point",
+    "center": [967797.405977897, 1952930.53749811],
+    "coordinates": [967797.405977897, 1952930.53749811]},
+"properties": {
+    "asset_id": "SPL230103",
+    "id": "layer_ansim_tree.6666be43-1e13-47fb-8607-334a9fd0d2bb",
+    "name": "스마트트리666",
+    "show_label": "스마트트리666",
+    "sublayer_id": "default"
+}
+}
+]

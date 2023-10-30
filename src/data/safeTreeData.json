@@ -1,0 +1,87 @@
+{
+    "code": 200,
+    "message": "OK",
+    "responseTime": "2023-07-13T10:14:35+09:00",
+    "response": {
+        "uid": "93af6d95-4e4c-4902-ada7-e1fa8ca76196",
+        "area": "41310",
+        "name": "안심트리2-구리역공원",
+        "asset_type": "ANSIM_TREE",
+        "node_id": "SPL230002",
+        "auto_ctrl_yn": false,
+        "cctv_info": [
+            {
+                "name": "영상반출테스트",
+                "cctv_id": "100869_1_0_0"
+            },
+            {
+                "name": "SIS-D5231_61",
+                "cctv_id": "100869_3_0_0"
+            }
+        ],
+        "dvcARSS": [
+            {
+                "dvcId": "SPL230002-ARSS",
+                "dvcTypeNm": "환경센서",
+                "temp": 17.512043,
+                "hmdt": 94.050909,
+                "fineDust": 20,
+                "ufineDust": 47,
+                "co2": 7,
+                "vocs": 8
+            }
+        ],
+        "dvcCHGR": [
+            {
+                "dvcId": "SPL230002-CHGR",
+                "dvcTypeNm": "충전기",
+                "pwr": 1,
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcLDLT": [
+            {
+                "dvcId": "SPL230002-LDLT",
+                "dvcTypeNm": "LED조명",
+                "pwr": 1,
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200",
+                "oprtStHm2": "0900",
+                "oprtEdHm2": "2200"
+            }
+        ],
+        "dvcFDLD": [
+            {
+                "dvcId": "SPL230002-FDLD",
+                "dvcTypeNm": "미세먼지신호등",
+                "pwr": 1,
+                "colr": "",
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ],
+        "dvcSPGN": [
+            {
+                "dvcId": "SPL230002-SPGN",
+                "dvcTypeNm": "태양광패널",
+                "watt": 1000,
+                "amp": 7,
+                "volt": 17,
+                "err": 0,
+                "wattTdy": 100
+            }
+        ],
+        "dvcHTBC": [
+            {
+                "dvcId": "SPL230002-HTBC",
+                "dvcTypeNm": "온열벤치",
+                "pwr": 1,
+                "oprtStMd": "0101",
+                "oprtEdMd": "1231",
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            }
+        ]
+    }
+}
