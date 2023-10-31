@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import ControlContent from "../../components/safeTree/ControlContent";
 
 const SafeTreeControlPage = () => {
-  return <Box>SafeTreeControlPage</Box>;
+    return <ControlContent />;
 };
 
 export default SafeTreeControlPage;
