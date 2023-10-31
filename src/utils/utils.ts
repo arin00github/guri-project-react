@@ -45,5 +45,5 @@ export const configureUrl = ({ testUrl, url }: { testUrl: string; url: string })
  * @description 온전한 API의 url 문자열을 만드는 함수
  */
 export function makeTestUrl(path: string) {
-    return `https://localhost:8080${path}`;
+    return `${path}`;
 }

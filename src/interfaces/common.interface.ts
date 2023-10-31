@@ -1,3 +1,5 @@
+import { ControlDeviceType } from "./control.interface";
+
 export interface CommonResponse {
     code: number;
     message: string;
@@ -30,6 +32,11 @@ export interface FeatureAsset {
     properties: Record<string, string | number | object>;
 }
 
+export type errorSet = {
+    key: string;
+    message: string;
+};
+
 /**
  * @typedef LabelType
  * @description select의 options 값을 정의할 때 사용
@@ -48,28 +55,20 @@ export type KeyProperty = {
 };
 
 /**
- * @typedef EditedDeviceType
+ * @typedef ModifiedDeviceType
  * @property {string} dvcName 장치한글이름
- * @property {Record<string, string | number>} dvcData 장치상세정보
+ * @property {ControlDeviceType} dvcData 장치상세정보
  * @property {string} dvcType 장치종류
  */
-export interface EditedDeviceType {
+export interface ModifiedDeviceType {
     dvcName: string;
-    dvcData: Record<string, string | number>;
+    dvcData: ControlDeviceType;
     dvcType: string;
 }
 
 export type SuccessCallback<T, V> = (data: T, variables: V, context: unknown) => void;
 
 export type ErrorCallback<V> = (error: unknown, variables: V, context: unknown) => void;
-
-/**
- * @typedef {Object} UseAssetListParam<T>
- * @property {SuccessCallback<T>} onSuccess API 성공 시 실행되는 함수
- */
-export interface UseAssetParam<T> {
-    onSuccess?: (data: T) => void;
-}
 
 /**
  * @typedef {Object} UseDetailParam<T>

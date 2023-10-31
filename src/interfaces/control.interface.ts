@@ -10,6 +10,17 @@ export interface CctvInfoType {
 }
 
 /**
+ * @description 장치의 상세정보 단위
+ */
+export type ControlType = {
+    label: string;
+    key: string;
+    type: "switch" | "input" | "select" | "calendar" | "";
+    value: unknown;
+    errorMsg?: string;
+};
+
+/**
  * @typedef ControlDeviceType
  * @description 장치의 상세정보를 담은 배열
  */
@@ -24,13 +35,13 @@ export type ControlDeviceType = Record<string, string | number>;
  * @property {string} node_id 노드 아이디
  * @property {string} auto_ctrl_yn 자동모드 여부
  * @property {CctvInfoType} cctv_info cctv 정보를 담은 배열
- * @property {Record<string, string | number>[] | undefined} dvcARCO 냉난방기 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcARSS 환경센서 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcCHGR 충전기 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcLDLT LED조명 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcATDR 자동문 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcSPGN 태양광패널 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcHTBC 온열밴치 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcARCO 냉난방기 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcARSS 환경센서 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcCHGR 충전기 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcLDLT LED조명 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcATDR 자동문 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcSPGN 태양광패널 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcHTBC 온열밴치 상세정보 배열
  */
 export interface SecureGuardDetail {
     uid: string;
@@ -40,13 +51,13 @@ export interface SecureGuardDetail {
     node_id: string;
     auto_ctrl_yn: boolean;
     cctv_info: CctvInfoType[];
-    dvcARCO?: ControlDeviceType;
-    dvcARSS?: ControlDeviceType;
-    dvcCHGR?: ControlDeviceType;
-    dvcLDLT?: ControlDeviceType;
-    dvcATDR?: ControlDeviceType;
-    dvcSPGN?: ControlDeviceType;
-    dvcHTBC?: ControlDeviceType;
+    dvcARCO?: ControlDeviceType[];
+    dvcARSS?: ControlDeviceType[];
+    dvcCHGR?: ControlDeviceType[];
+    dvcLDLT?: ControlDeviceType[];
+    dvcATDR?: ControlDeviceType[];
+    dvcSPGN?: ControlDeviceType[];
+    dvcHTBC?: ControlDeviceType[];
 }
 
 /**
@@ -58,9 +69,9 @@ export interface SecureGuardDetail {
  * @property {string} node_id 노드 아이디
  * @property {string} auto_ctrl_yn 자동모드 여부
  * @property {CctvInfoType} cctv_info cctv 정보를 담은 배열
- * @property {Record<string, string | number>[] | undefined} dvcARCO 냉난방기 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcARSS 환경센서 상세정보 배열
- * @property {Record<string, string | number>[] | undefined} dvcLDLT LED조명 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcARCO 냉난방기 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcARSS 환경센서 상세정보 배열
+ * @property {ControlDeviceType[] | undefined} dvcLDLT LED조명 상세정보 배열
  */
 export interface SafeTreeDetail {
     uid: string;
@@ -70,10 +81,10 @@ export interface SafeTreeDetail {
     node_id: string;
     auto_ctrl_yn: boolean;
     cctv_info: CctvInfoType[];
-    dvcFDLD?: ControlDeviceType;
-    dvcARCO?: ControlDeviceType;
-    dvcARSS?: ControlDeviceType;
-    dvcLDLT?: ControlDeviceType;
+    dvcFDLD?: ControlDeviceType[];
+    dvcARCO?: ControlDeviceType[];
+    dvcARSS?: ControlDeviceType[];
+    dvcLDLT?: ControlDeviceType[];
 }
 
 /** 방범초소 장비 상세정보 params */

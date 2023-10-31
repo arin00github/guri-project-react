@@ -1,13 +1,14 @@
 import { ErrorResponse, FeatureAsset } from "../../interfaces/common.interface";
-import { SafeTreeDetailResponse } from "../../interfaces/control.interface";
-import { getDeviceAssets } from "../api/common.api";
+import { ControlDeviceType, PostDeviceResponse, SecureGuardDetailResponse } from "../../interfaces/control.interface";
+import { getDeviceAssets, postDeviceControl } from "../api/common.api";
 import { getSafeTreeControlDetail } from "../api/safeTree.api";
 
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { UseMutationResult, UseQueryResult, useMutation, useQuery } from "@tanstack/react-query";
 
 const SECURE_GUARD_QUERY_KEY = {
     ASSET: "smart-secure-guard-assets",
     DETAIL: "smart-secure-guard-detail",
+    CONTROL: "smart-secure-guard-control",
 };
 
 export const useSecureGuardAssets = (): UseQueryResult<FeatureAsset[], ErrorResponse> => {
@@ -17,9 +18,20 @@ export const useSecureGuardAssets = (): UseQueryResult<FeatureAsset[], ErrorResp
     });
 };
 
-export const useSecureGuardDetail = (selectedId?: string): UseQueryResult<SafeTreeDetailResponse, ErrorResponse> => {
+export const useSecureGuardDetail = (selectedId?: string): UseQueryResult<SecureGuardDetailResponse, ErrorResponse> => {
     return useQuery({
         queryKey: [SECURE_GUARD_QUERY_KEY.DETAIL, selectedId],
         queryFn: () => getSafeTreeControlDetail(selectedId),
+    });
+};
+
+export const useSecureGuardControl = (): UseMutationResult<
+    PostDeviceResponse | undefined,
+    ErrorResponse,
+    ControlDeviceType
+> => {
+    return useMutation({
+        mutationKey: [SECURE_GUARD_QUERY_KEY.CONTROL],
+        mutationFn: (newControl: ControlDeviceType) => postDeviceControl("secure-guard", newControl),
     });
 };

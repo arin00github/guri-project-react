@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
-export const securityGuardSelectedId = atom<string | undefined>({
-    key: "security-guard-selected-id",
+export const secureGuardSelectedId = atom<string | undefined>({
+    key: "secure-guard-selected-id",
     default: undefined,
 });
 

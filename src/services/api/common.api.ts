@@ -1,4 +1,4 @@
-import { ErrorResponse, FeatureAsset } from "../../interfaces/common.interface";
+import { FeatureAsset } from "../../interfaces/common.interface";
 import { ControlDeviceType, PostDeviceResponse } from "../../interfaces/control.interface";
 import { ASSET_API_URL, SAFE_TREE_API_URL, SECURE_GUARD_API_URL } from "../../utils/constant";
 import { configureUrl } from "../../utils/utils";
@@ -20,7 +20,9 @@ export const getDeviceAssets = async (layerId: string): Promise<FeatureAsset[] |
     const resObject = await executeRequest(currentUrl, {
         ...REQUEST_OPTIONS,
         data: { layerId },
+        method: "POST",
     });
+    console.log("getDeviceAssets resObject", resObject);
     if (resObject) {
         switch (resObject.status) {
             case 200:
@@ -43,10 +45,10 @@ export const getDeviceAssets = async (layerId: string): Promise<FeatureAsset[] |
  * @param {ControlDeviceType} newControl
  * @returns {Promise<PostDeviceResponse | ErrorResponse | undefined>}
  */
-export const PostDeviceControl = async (
+export const postDeviceControl = async (
     pageId: string,
     newControl: ControlDeviceType,
-): Promise<PostDeviceResponse | ErrorResponse | undefined> => {
+): Promise<PostDeviceResponse | undefined> => {
     const currentUrl = configureUrl({
         testUrl:
             pageId === "safe-tree" ? SAFE_TREE_API_URL.ControlChange_Test : SECURE_GUARD_API_URL.ControlChange_Test,

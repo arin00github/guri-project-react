@@ -9,8 +9,25 @@ export const MONITOR = "monitor";
 
 export const AREA_CODE = "41310";
 
+export const timeSelectArray = ["oprtStHm", "oprtStHm2", "oprtEdHm", "oprtEdHm2"];
+
+export const timeDaySelectArray = [
+    "oprtStHm",
+    "oprtStHm2",
+    "oprtEdHm",
+    "oprtEdHm2",
+    "coolStMd",
+    "coolEdMd",
+    "oprtStMd",
+    "oprtEdMd",
+    "heatStMd",
+    "heatEdMd",
+];
+
+export const daySelectArray = ["oprtStMd", "oprtEdMd", "coolStMd", "coolEdMd", "heatStMd", "heatEdMd"];
+
 /** @constant 공통 url 부분 */
-const commonPath = "/tms-secure-zone/api/v1";
+const commonPath = "/app/v1";
 
 /** @constant 안심트리 관련 API의 url주소  */
 export const SAFE_TREE_API_URL = {

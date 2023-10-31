@@ -1,13 +1,14 @@
 import { ErrorResponse, FeatureAsset } from "../../interfaces/common.interface";
-import { SafeTreeDetailResponse } from "../../interfaces/control.interface";
-import { getDeviceAssets } from "../api/common.api";
+import { ControlDeviceType, PostDeviceResponse, SafeTreeDetailResponse } from "../../interfaces/control.interface";
+import { getDeviceAssets, postDeviceControl } from "../api/common.api";
 import { getSafeTreeControlDetail } from "../api/safeTree.api";
 
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { UseMutationResult, UseQueryResult, useMutation, useQuery } from "@tanstack/react-query";
 
 const SAFE_TREE_QUERY_KEY = {
     ASSET: "smart-safe-tree-assets",
     DETAIL: "smart-safe-tree-detail",
+    CONTROL: "smart-safe-tree-control",
 };
 
 export const useSafeTreeAssets = (): UseQueryResult<FeatureAsset[], ErrorResponse> => {
@@ -21,5 +22,16 @@ export const useSafeTreeDetail = (selectedId?: string): UseQueryResult<SafeTreeD
     return useQuery({
         queryKey: [SAFE_TREE_QUERY_KEY.DETAIL, selectedId],
         queryFn: () => getSafeTreeControlDetail(selectedId),
+    });
+};
+
+export const useSafeTreeControl = (): UseMutationResult<
+    PostDeviceResponse | undefined,
+    ErrorResponse,
+    ControlDeviceType
+> => {
+    return useMutation({
+        mutationKey: [SAFE_TREE_QUERY_KEY.CONTROL],
+        mutationFn: (newControl: ControlDeviceType) => postDeviceControl("safe-tree", newControl),
     });
 };
