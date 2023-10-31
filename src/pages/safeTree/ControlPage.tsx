@@ -1,7 +1,7 @@
-import ControlContent from "../../components/safeTree/ControlContent";
+import PageContent from "../../components/safeTree/PageContent";
 
 const SafeTreeControlPage = () => {
-    return <ControlContent />;
+    return <PageContent />;
 };
 
 export default SafeTreeControlPage;

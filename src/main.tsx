@@ -11,9 +11,12 @@ import { RecoilRoot } from "recoil";
 
 const queryClient = new QueryClient({
     queryCache: new QueryCache({
-        // onError: (error, query) => {
-        //     if(query.meta.)
-        // }
+        onError: (error, query) => {
+            console.log("query error", error, query);
+        },
+        onSuccess: (data, query) => {
+            console.log(data, query);
+        },
     }),
 });
 

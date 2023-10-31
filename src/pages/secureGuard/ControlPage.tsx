@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import PageContent from "../../components/secureGuard/PageContent";
 
-const SecurityGuardControlPage = () => {
-    return <Box>SecurityGuardControlPage</Box>;
+const SecureGuardControlPage = () => {
+    return <PageContent />;
 };
 
-export default SecurityGuardControlPage;
+export default SecureGuardControlPage;
