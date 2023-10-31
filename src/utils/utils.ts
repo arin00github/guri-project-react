@@ -5,8 +5,8 @@
  * @description 문자열에 시간형식 입히는 함수 ex) 1200 => 12:00
  */
 export function makeTimeString(timeString: string) {
-  const timeString2 = timeString;
-  return `${timeString.slice(0, 2)}:${timeString2.slice(2)}`;
+    const timeString2 = timeString;
+    return `${timeString.slice(0, 2)}:${timeString2.slice(2)}`;
 }
 
 /**
@@ -16,8 +16,8 @@ export function makeTimeString(timeString: string) {
  * @description 문자열에 날짜형식 입히는 함수 ex) 10/23 => 10/23
  */
 export function makeDayString(timeString: string) {
-  const timeString2 = timeString;
-  return `${timeString.slice(0, 2)}/${timeString2.slice(2)}`;
+    const timeString2 = timeString;
+    return `${timeString.slice(0, 2)}/${timeString2.slice(2)}`;
 }
 
 /**
@@ -26,22 +26,16 @@ export function makeDayString(timeString: string) {
  * @returns {string} 환경에 따라 API의 url 주소 리턴
  * @description 환경이 test, development 에 따라 API의 url 주소를 리턴하는 함수
  */
-export const configureUrl = ({
-  testUrl,
-  url,
-}: {
-  testUrl: string;
-  url: string;
-}) => {
-  let finalUrl: string;
-  if (process.env.NODE_ENV === "test") {
-    finalUrl = testUrl;
-  } else if (process.env.NODE_ENV === "development") {
-    finalUrl = url;
-  } else {
-    finalUrl = url;
-  }
-  return finalUrl;
+export const configureUrl = ({ testUrl, url }: { testUrl: string; url: string }) => {
+    let finalUrl: string;
+    if (process.env.NODE_ENV === "test") {
+        finalUrl = testUrl;
+    } else if (process.env.NODE_ENV === "development") {
+        finalUrl = url;
+    } else {
+        finalUrl = url;
+    }
+    return finalUrl;
 };
 
 /**
@@ -51,5 +45,5 @@ export const configureUrl = ({
  * @description 온전한 API의 url 문자열을 만드는 함수
  */
 export function makeTestUrl(path: string) {
-  return `https://localhost:8080${path}`;
+    return `https://localhost:8080${path}`;
 }
