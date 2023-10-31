@@ -3,7 +3,7 @@ import { KeyProperty, LabelType } from "../interfaces/common.interface";
 import { makeTestUrl } from "./utils";
 
 export const SAFE_TREE = "safe-tree";
-export const SECURITY_GUARD = "security-guard";
+export const SECURE_GUARD = "secure-guard";
 export const CONTROL = "control";
 export const MONITOR = "monitor";
 
@@ -21,7 +21,7 @@ export const SAFE_TREE_API_URL = {
 };
 
 /** @constant 방범초소 관련 API의 url주소  */
-export const SECURITY_GUARD_API_URL = {
+export const SECURE_GUARD_API_URL = {
     DetailInfo: `${commonPath}/secure-zone/get/byid`,
     ControlChange: `${commonPath}/secure-zone/post/control`,
     DetailInfo_Test: makeTestUrl(`${commonPath}/secure-zone/get/byid`),

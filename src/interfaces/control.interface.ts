@@ -16,7 +16,7 @@ export interface CctvInfoType {
 export type ControlDeviceType = Record<string, string | number>;
 
 /**
- * @typedef SecurityGuardDetail
+ * @typedef SecureGuardDetail
  * @property {string} uid 고유아이디
  * @property {string} area 지역
  * @property {string} name 자산이름
@@ -32,7 +32,7 @@ export type ControlDeviceType = Record<string, string | number>;
  * @property {Record<string, string | number>[] | undefined} dvcSPGN 태양광패널 상세정보 배열
  * @property {Record<string, string | number>[] | undefined} dvcHTBC 온열밴치 상세정보 배열
  */
-export interface SecurityGuardDetail {
+export interface SecureGuardDetail {
     uid: string;
     area: string;
     name: string;
@@ -82,8 +82,8 @@ export interface SecurityGuardDetailParams {
 }
 
 /** 방범초소 장비 상세정보 response */
-export interface SecurityGuardDetailResponse extends CommonResponse {
-    response: SecurityGuardDetail;
+export interface SecureGuardDetailResponse extends CommonResponse {
+    response: SecureGuardDetail;
 }
 
 /** 안심트리 장비 상세정보 params */
@@ -94,4 +94,8 @@ export interface SafeTreeDetailParams {
 /** 안심트리 장비 상세정보 response */
 export interface SafeTreeDetailResponse extends CommonResponse {
     response: SafeTreeDetail;
+}
+/** 장비 상세정보 변경 response  */
+export interface PostDeviceResponse extends CommonResponse {
+    response: ControlDeviceType;
 }

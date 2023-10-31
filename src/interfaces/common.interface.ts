@@ -1,33 +1,33 @@
 export interface CommonResponse {
-  code: number;
-  message: string;
-  responseTime: string;
+    code: number;
+    message: string;
+    responseTime: string;
 }
 
 export interface ResultForm<T extends object> {
-  code: number;
-  message: string;
-  responseTime: string;
-  response: T;
+    code: number;
+    message: string;
+    responseTime: string;
+    response: T;
 }
 
 /** API 에러 시 응답 객체 */
 export interface ErrorResponse extends CommonResponse {
-  response: undefined;
+    response: undefined;
 }
 
 export type processStateType = {
-  message: string;
-  action: string;
+    message: string;
+    action: string;
 };
 
 export interface FeatureAsset {
-  geometry: {
-    type: string;
-    center: number[];
-    coordinates: number[];
-  };
-  properties: Record<string, string | number | object>;
+    geometry: {
+        type: string;
+        center: number[];
+        coordinates: number[];
+    };
+    properties: Record<string, string | number | object>;
 }
 
 /**
@@ -41,10 +41,10 @@ export type LabelType = { label: string; value: string | number };
  * @description 장치의 영문,한글이름, 매칭되는 컴포넌트 정보가 있는 배열
  */
 export type KeyProperty = {
-  enName: string;
-  krName: string;
-  type?: "select" | "switch" | "input" | "calendar";
-  dimension?: string;
+    enName: string;
+    krName: string;
+    type?: "select" | "switch" | "input" | "calendar";
+    dimension?: string;
 };
 
 /**
@@ -54,30 +54,21 @@ export type KeyProperty = {
  * @property {string} dvcType 장치종류
  */
 export interface EditedDeviceType {
-  dvcName: string;
-  dvcData: Record<string, string | number>;
-  dvcType: string;
+    dvcName: string;
+    dvcData: Record<string, string | number>;
+    dvcType: string;
 }
 
-export type SuccessCallback<T, V> = (
-  data: T,
-  variables: V,
-  context: unknown,
-) => void;
+export type SuccessCallback<T, V> = (data: T, variables: V, context: unknown) => void;
 
-export type ErrorCallback<V> = (
-  error: unknown,
-  variables: V,
-  context: unknown,
-) => void;
+export type ErrorCallback<V> = (error: unknown, variables: V, context: unknown) => void;
 
 /**
  * @typedef {Object} UseAssetListParam<T>
  * @property {SuccessCallback<T>} onSuccess API 성공 시 실행되는 함수
  */
-export interface UseAssetListParam<T> {
-  token: string;
-  onSuccess?: (data: T) => void;
+export interface UseAssetParam<T> {
+    onSuccess?: (data: T) => void;
 }
 
 /**
@@ -86,8 +77,8 @@ export interface UseAssetListParam<T> {
  * @property {SuccessCallback<T, Record<string, string | number>>} onSuccess API 성공 시 실행되는 함수
  */
 export interface UseDetailParam<T> {
-  selectedId?: string;
-  onSuccess?: SuccessCallback<T, Record<string, string | number>>;
+    selectedId?: string;
+    onSuccess?: SuccessCallback<T, Record<string, string | number>>;
 }
 
 /**
@@ -96,6 +87,6 @@ export interface UseDetailParam<T> {
  * @property {ErrorCallback<Record<string, string | number>>} onError API 실패 시 실행되는 함수
  */
 export interface UseControlParam<T> {
-  onSuccess?: SuccessCallback<T, Record<string, string | number>>;
-  onError?: ErrorCallback<Record<string, string | number>>;
+    onSuccess?: SuccessCallback<T, Record<string, string | number>>;
+    onError?: ErrorCallback<Record<string, string | number>>;
 }
