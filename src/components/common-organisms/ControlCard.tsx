@@ -31,17 +31,18 @@ const ControlCard = (props: ControlCardProps) => {
         const properties = combineProperties(controlData);
         return (
             <>
-                {Object.keys(properties).map(([key, value], idx) => {
+                {Object.entries(properties).map(([key, value], idx) => {
                     let statLabel: string = searchDataByProPerty(key, "krName") || "";
                     if (dvcType === "dvcATDR" && key === "oprtMode") {
                         statLabel = "작동상태";
                     }
+
                     return (
                         <DataStats
                             key={idx}
                             statLabel={statLabel}
                             keyString={key}
-                            valueString={value}
+                            valueString={`${value}`}
                             dvcType={dvcType}
                         />
                     );

@@ -4,6 +4,8 @@ import { useSecureGuardAssets } from "../../services/hooks/secureGuard.hook";
 import { secureGuardSelectedId } from "../../services/recoil/controlAtom";
 import ControlHeader from "../common-organisms/ControlHeader";
 
+import ControlContainter from "./ControlContainer";
+
 import { Container } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
 
@@ -50,6 +52,7 @@ const PageContent = () => {
                 handleSelectChange={handleSelectChange}
                 selectOptions={modifiedOptions}
             />
+            <ControlContainter selectedId={selectedId} />
         </Container>
     );
 };

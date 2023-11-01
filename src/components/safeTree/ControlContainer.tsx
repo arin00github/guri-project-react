@@ -41,17 +41,34 @@ const ControlContainter = (props: ControlContainterProps) => {
     const { isOpen: isConfirmOpen, onClose: onConfirmClose, onOpen: onConfirmOpen } = useDisclosure();
 
     /** @description 결과 모달창 관리하는 훅 */
-    const { isOpen: isResultOpen, onClose: onResultClose } = useDisclosure();
+    const { isOpen: isResultOpen, onClose: onResultClose, onOpen: onResultOpen } = useDisclosure();
 
     /**
      * @description 선택된자산의 장치상세정보를 불러오는 API, 이를 관리하는 react-query로 만든 훅
      */
     const { data, isLoading, isError } = useSafeTreeDetail(selectedId);
 
-    const controlMutation = useSafeTreeControl();
+    console.log("ControlContainer data", data);
+
+    const controlMutation = useSafeTreeControl({
+        onSuccess: () => {
+            setProcessState({
+                ...processState,
+                message: `상세 설정 변경이 완료되었습니다.`,
+            });
+            onResultOpen();
+        },
+        onError: () => {
+            setProcessState({
+                ...processState,
+                message: `상세 설정 변경이 실패하였습니다.`,
+            });
+            onResultOpen();
+        },
+    });
 
     const modifiedData = useMemo(() => {
-        const totalArray: ModifiedDeviceType[] = [];
+        let totalArray: ModifiedDeviceType[] = [];
         if (data?.response) {
             constDeviceArray.forEach(item => {
                 const itemType = item.dvcType as keyof SafeTreeDetail;
@@ -63,7 +80,7 @@ const ControlContainter = (props: ControlContainterProps) => {
                         dvcType: item.dvcType,
                     };
                 });
-                totalArray.concat(...makeArray);
+                totalArray = totalArray.concat(...makeArray);
             });
         } else {
             return totalArray;
