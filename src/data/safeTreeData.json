@@ -56,7 +56,7 @@
                 "dvcId": "SPL230002-FDLD",
                 "dvcTypeNm": "미세먼지신호등",
                 "pwr": 1,
-                "colr": "",
+                "colr": "16b6ff",
                 "oprtStHm": "0900",
                 "oprtEdHm": "2200"
             }

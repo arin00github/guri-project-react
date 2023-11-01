@@ -11,6 +11,7 @@ import { http, HttpResponse } from "msw";
 export const handlers = [
     http.post(SECURE_GUARD_API_URL.DetailInfo_Test, async ({ request }) => {
         const reqObject = (await request.json()) as SecurityGuardDetailParams;
+
         const editedData = editData(`방범초소${reqObject.uid.slice(0, 3)}`, reqObject.uid, "auto", securityGuardData);
         return HttpResponse.json(editedData);
     }),
@@ -52,7 +53,6 @@ export const handlers = [
     http.post(ASSET_API_URL.AssetInfo_Test, async ({ request }) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const reqObject = (await request.json()) as any;
-        console.log("resObject", reqObject);
         const typeName = reqObject.layerId;
         if (typeName === "safe-tree") {
             return HttpResponse.json([{ features: SFAssetList }]);

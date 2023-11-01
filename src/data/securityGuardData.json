@@ -22,15 +22,16 @@
         "dvcARCO": [
             {
                 "dvcId": "SBS230001-ARCO",
+                "auto": 1,
                 "oprt": 1,
                 "oprtMode": "1",
-                "coolTemp": 5,
-                "heatTemp": 3,
                 "autoTemp": 11,
                 "windSts": "2",
                 "indrTemp": -5.723975,
                 "coolStMd": "0601",
                 "coolEdMd": "0930",
+                "heatStMd": "0601",
+                "heatEdMd": "0930",
                 "oprtStHm": "0800",
                 "oprtEdHm": "2200"
             }
@@ -49,6 +50,7 @@
         "dvcCHGR": [
             {
                 "dvcId": "SBS230001-CHGR",
+                "auto":1,
                 "pwr": 1,
                 "oprtStHm": "0900",
                 "oprtEdHm": "2200"
@@ -57,6 +59,7 @@
         "dvcLDLT": [
             {
                 "dvcId": "SBS230001-LDLT",
+                "auto":1,
                 "pwr": 1,
                 "oprtStHm": "0900",
                 "oprtEdHm": "2200"
@@ -66,6 +69,14 @@
             {
                 "dvcId": "SBS230001-ATDR",
                 "pwr": 1,
+                "oprtMode": "1",
+                "oprtStHm": "0900",
+                "oprtEdHm": "2200"
+            },
+            {
+                "dvcId": "SBS230002-ATDR",
+                "pwr": 1,
+                "oprtMode": "1",
                 "oprtStHm": "0900",
                 "oprtEdHm": "2200"
             }
@@ -75,13 +86,13 @@
                 "dvcId": "SBS230001-SPGN",
                 "watt": 1000,
                 "amp": 54,
-                "volt": 88,
-                "wattTdy": 100
+                "volt": 88
             }
         ],
         "dvcHTBC": [
             {
                 "dvcId": "SBS230001-HTBC",
+                "auto":1,
                 "pwr": 1,
                 "oprtStMd": "0101",
                 "oprtEdMd": "1231",

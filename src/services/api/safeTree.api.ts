@@ -21,7 +21,7 @@ export const getSafeTreeControlDetail = async (
 
     const resObject = await executeRequest(currentUrl, {
         ...REQUEST_OPTIONS,
-        data: { id: selectedId },
+        data: { uid: selectedId },
     });
 
     if (resObject) {
