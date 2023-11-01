@@ -19,8 +19,6 @@ const MonitorAssetPanel = () => {
 
     const { data } = useSecureGuardAssets();
 
-    console.log("data", data);
-
     const setSelectAsset = useSetRecoilState(monitorSelectedId);
 
     const assetList: AssetItem[] = useMemo(() => {
@@ -37,8 +35,6 @@ const MonitorAssetPanel = () => {
             return [];
         }
     }, [data]);
-
-    console.log("assetList", assetList);
 
     return (
         <Panel direction="right">

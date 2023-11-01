@@ -64,6 +64,7 @@ export interface ModifiedDeviceType {
     dvcName: string;
     dvcData: ControlDeviceType;
     dvcType: string;
+    dvcId: string;
 }
 
 export type SuccessCallback<T, V> = (data: T, variables: V, context: unknown) => void;

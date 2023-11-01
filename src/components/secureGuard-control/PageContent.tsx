@@ -46,7 +46,7 @@ const PageContent = () => {
     }, [data]);
 
     return (
-        <Container>
+        <Container px={8}>
             <ControlHeader
                 selectedId={selectedId}
                 handleSelectChange={handleSelectChange}

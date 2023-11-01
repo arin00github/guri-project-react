@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { ModifiedDeviceType, processStateType } from "../../interfaces/common.interface";
 import { ControlDeviceType, SafeTreeDetail } from "../../interfaces/control.interface";
 import { useSafeTreeControl, useSafeTreeDetail } from "../../services/hooks/safeTree.hook";
+import { safeTreeDeviceArray } from "../../utils/constant";
 import ErrorBox from "../common-atoms/ErrorBox";
 import Loading from "../common-atoms/Loading";
 import { SubTitle } from "../common-atoms/SubTitle";
@@ -16,11 +17,6 @@ import { Box, Flex, Grid, Text, useDisclosure } from "@chakra-ui/react";
 interface ControlContainterProps {
     selectedId?: string;
 }
-
-const constDeviceArray: { dvcName: string; dvcType: string }[] = [
-    { dvcName: "LED조명 정보", dvcType: "dvcLDLT" },
-    { dvcName: "미세먼지신호등", dvcType: "dvcFDLD" },
-];
 
 /**
  * @name ControlContainter
@@ -73,7 +69,7 @@ const ControlContainter = (props: ControlContainterProps) => {
     const modifiedData = useMemo(() => {
         let totalArray: ModifiedDeviceType[] = [];
         if (data?.response) {
-            constDeviceArray.forEach(item => {
+            safeTreeDeviceArray.forEach(item => {
                 const itemType = item.dvcType as keyof SafeTreeDetail;
                 const dataArray = data.response[itemType] as ControlDeviceType[];
                 const makeArray = dataArray.map((dt, idx) => {
@@ -81,6 +77,7 @@ const ControlContainter = (props: ControlContainterProps) => {
                         dvcName: `${item.dvcName}${idx > 0 ? idx + 1 : ""}`,
                         dvcData: dt,
                         dvcType: item.dvcType,
+                        dvcId: dt.dvcId as string,
                     };
                 });
                 totalArray = totalArray.concat(...makeArray);

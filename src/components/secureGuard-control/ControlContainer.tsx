@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { ModifiedDeviceType, processStateType } from "../../interfaces/common.interface";
 import { ControlDeviceType, SecureGuardDetail } from "../../interfaces/control.interface";
 import { useSecureGuardControl, useSecureGuardDetail } from "../../services/hooks/secureGuard.hook";
+import { securityGuardDeviceArray } from "../../utils/constant";
 import ErrorBox from "../common-atoms/ErrorBox";
 import Loading from "../common-atoms/Loading";
 import { SubTitle } from "../common-atoms/SubTitle";
@@ -16,15 +17,6 @@ import { Box, Flex, Grid, Text, useDisclosure } from "@chakra-ui/react";
 interface ControlContainterProps {
     selectedId?: string;
 }
-
-const constDeviceArray: { dvcName: string; dvcType: string }[] = [
-    { dvcName: "냉난방기", dvcType: "dvcARCO" },
-    { dvcName: "자동문", dvcType: "dvcATDR" },
-    { dvcName: "충전기", dvcType: "dvcCHGR" },
-    { dvcName: "온열벤치", dvcType: "dvcHTBC" },
-    { dvcName: "태양광패널", dvcType: "dvcSPGN" },
-    { dvcName: "LED조명 정보", dvcType: "dvcLDLT" },
-];
 
 /**
  * @name ControlContainter
@@ -77,7 +69,7 @@ const ControlContainter = (props: ControlContainterProps) => {
     const modifiedData = useMemo(() => {
         let totalArray: ModifiedDeviceType[] = [];
         if (data?.response) {
-            constDeviceArray.forEach(item => {
+            securityGuardDeviceArray.forEach(item => {
                 const itemType = item.dvcType as keyof SecureGuardDetail;
                 const dataArray = data.response[itemType] as ControlDeviceType[];
                 const makeArray = dataArray.map((dt, idx) => {
@@ -85,6 +77,7 @@ const ControlContainter = (props: ControlContainterProps) => {
                         dvcName: `${item.dvcName}${idx > 0 ? idx + 1 : ""}`,
                         dvcData: dt,
                         dvcType: item.dvcType,
+                        dvcId: dt.dvcId as string,
                     };
                 });
                 totalArray = totalArray.concat(...makeArray);

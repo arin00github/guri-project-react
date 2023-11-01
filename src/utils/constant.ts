@@ -26,6 +26,20 @@ export const timeDaySelectArray = [
 
 export const daySelectArray = ["oprtStMd", "oprtEdMd", "coolStMd", "coolEdMd", "heatStMd", "heatEdMd"];
 
+export const securityGuardDeviceArray: { dvcName: string; dvcType: string }[] = [
+    { dvcName: "냉난방기", dvcType: "dvcARCO" },
+    { dvcName: "자동문", dvcType: "dvcATDR" },
+    { dvcName: "충전기", dvcType: "dvcCHGR" },
+    { dvcName: "온열벤치", dvcType: "dvcHTBC" },
+    { dvcName: "태양광패널", dvcType: "dvcSPGN" },
+    { dvcName: "LED조명 정보", dvcType: "dvcLDLT" },
+];
+
+export const safeTreeDeviceArray: { dvcName: string; dvcType: string }[] = [
+    { dvcName: "LED조명 정보", dvcType: "dvcLDLT" },
+    { dvcName: "미세먼지신호등", dvcType: "dvcFDLD" },
+];
+
 /** @constant 공통 url 부분 */
 const commonPath = "/app/v1";
 
