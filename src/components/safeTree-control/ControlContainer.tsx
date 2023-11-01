@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 
 import { ModifiedDeviceType, processStateType } from "../../interfaces/common.interface";
-import { ControlDeviceType, SecureGuardDetail } from "../../interfaces/control.interface";
-import { useSecureGuardControl, useSecureGuardDetail } from "../../services/hooks/secureGuard.hook";
+import { ControlDeviceType, SafeTreeDetail } from "../../interfaces/control.interface";
+import { useSafeTreeControl, useSafeTreeDetail } from "../../services/hooks/safeTree.hook";
 import ErrorBox from "../common-atoms/ErrorBox";
 import Loading from "../common-atoms/Loading";
 import { SubTitle } from "../common-atoms/SubTitle";
@@ -18,14 +18,15 @@ interface ControlContainterProps {
 }
 
 const constDeviceArray: { dvcName: string; dvcType: string }[] = [
-    { dvcName: "냉난방기", dvcType: "dvcARCO" },
-    { dvcName: "자동문", dvcType: "dvcATDR" },
-    { dvcName: "충전기", dvcType: "dvcCHGR" },
-    { dvcName: "온열벤치", dvcType: "dvcHTBC" },
-    { dvcName: "태양광패널", dvcType: "dvcSPGN" },
     { dvcName: "LED조명 정보", dvcType: "dvcLDLT" },
+    { dvcName: "미세먼지신호등", dvcType: "dvcFDLD" },
 ];
 
+/**
+ * @name ControlContainter
+ * @description SafeTreeControlPage의 ControlContainter 컴포넌트
+ * @param {string | undefined} props.selectedId 선택된 자산의 아이디
+ */
 const ControlContainter = (props: ControlContainterProps) => {
     const { selectedId } = props;
 
@@ -50,9 +51,9 @@ const ControlContainter = (props: ControlContainterProps) => {
     /**
      * @description 선택된자산의 장치상세정보를 불러오는 API, 이를 관리하는 react-query로 만든 훅
      */
-    const { data, isLoading, isError } = useSecureGuardDetail(selectedId);
+    const { data, isLoading, isError } = useSafeTreeDetail(selectedId);
 
-    const controlMutation = useSecureGuardControl({
+    const controlMutation = useSafeTreeControl({
         onSuccess: () => {
             setProcessState({
                 ...processState,
@@ -73,7 +74,7 @@ const ControlContainter = (props: ControlContainterProps) => {
         let totalArray: ModifiedDeviceType[] = [];
         if (data?.response) {
             constDeviceArray.forEach(item => {
-                const itemType = item.dvcType as keyof SecureGuardDetail;
+                const itemType = item.dvcType as keyof SafeTreeDetail;
                 const dataArray = data.response[itemType] as ControlDeviceType[];
                 const makeArray = dataArray.map((dt, idx) => {
                     return {
@@ -149,7 +150,7 @@ const ControlContainter = (props: ControlContainterProps) => {
             <Flex pb={7} alignItems="center">
                 <SubTitle pb={0} data-testid="sg-subtitle-2" display="flex" alignItems="flex-end">
                     <Text pr={2} fontSize="28px" color="blue.200" data-testid="detail-header-name">
-                        description
+                        {data?.response?.name}
                     </Text>
                     <Text>장치 상태 및 상세설정</Text>
                 </SubTitle>
